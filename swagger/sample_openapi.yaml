@@ -1,0 +1,27 @@
+openapi: 3.0.1
+info:
+  title: /
+  version: 3.1.2
+servers:
+- url: "{server}:{port}/"
+  variables:
+    server:
+      default: http://localhost
+    port:
+      default: "9090"
+paths:
+  /get:
+    post:
+      operationId: postGet
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+      responses:
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+components: {}
